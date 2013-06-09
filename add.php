@@ -60,7 +60,7 @@ list-style: none;
 padding-left: 0;
 padding-right: 20px;
 }
-article {
+fieldset {
 float: left;
 }
 footer {
@@ -108,18 +108,24 @@ echo "
 ?>
 </ul>
 </nav>
-<article>
-<?php
-if(!empty($topic)){
-?>
-<h2><?=$topic['title']?></h2>
-<div class="description">
-<?=$topic['description']?>
-</div>
-<?php
-}
-?>
-</article>
+<fieldset>
+<legend>
+GET
+</legend>
+<form action="./add_process.php" method="GET">
+<p>
+제목
+<input type="text" name="title" />
+<br />
+</p>
+<p>
+본문
+<input type="text" name="article" />
+<br />
+</p>
+<input type="submit" value="제출"/>
+</form>
+</fieldset>
 </div>
 </body>
 </html>
